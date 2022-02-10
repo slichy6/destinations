@@ -8,5 +8,4 @@ const destinations = [
 //export
 module.exports = {
     destinations, 
-    cities,
 }; 
