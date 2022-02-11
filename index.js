@@ -1,8 +1,11 @@
-const fetch = require("node-fetch");
+require("dotenv").config();
+
+const fetch= require("node-fetch");
 
 function getUnsplashPhoto(keyword){
-    const url = `https://api.unsplash.com/photos/random?client_id=FqWd5kvLZXWvCnbPv0qEva4QssxcCGC94rL-f8FYxYQ&query=${keyword}`
-
+    const url = `https://api.unsplash.com/photos/random?client_id=${process.env.UNSPLASH_API_KEY}&query=${keyword}`;
+    console.log(process.env);
+    
     fetch (url).then((res) => res.json())
     .then((data) => console.log(data.urls.small));
 
